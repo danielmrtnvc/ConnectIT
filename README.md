@@ -45,7 +45,8 @@ We implement these packges with the following code in the spreadsheet_to_SMS.py
 
 ===============================================================================
 
-'''import gspread
+~~~python
+import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 #Importing Twillo information
@@ -65,4 +66,4 @@ sheet = client.open("ENTER YOUR SPREADSHEET NAME HERE").sheet1
 #Extract and print all of the values
 list_of_hashes = sheet.get_all_records()
 print(list_of_hashes)
-'''
+~~~
