@@ -8,18 +8,19 @@ Maxwell, head of Building Operations at 55 Standish Court, Mississauga, Ontario,
 
 # Solution
 
-We decided to create a two part solution. The first being a concept idea using a sensor relay to make issues with the building interconnected through different sensors; air pressure, temperature, humidity, etc. We will then connect these sensors to a router to collect data from around the building. We will have this data accesible to Maxwell with a dashboard and implement a machine learning backend to figure out why the problems occured by taking into account the frequency, intensity, and location of the data. 
+Very vauge problem, I know :| 
 
-The second part is our more tangible end user experience. For this we created a simple python script utilizing Twillo API and Google Drive API. With these we implement the gspread package made by Anton Burnashev to read the spreadsheet data. 
+So we decided to create a two part solution. The first being a concept idea using a sensor relay to make issues with the building interconnected through different measurements; air pressure, temperature, humidity, etc. We will then connect these sensors to a router to collect data from around the building. We will have this data accessible to Maxwell with a dashboard and implement a machine learning backend to figure out why the problems occured by taking into account the frequency, intensity, and location of the data. 
+
+The second part is our more tangible end user experience. For this we created a simple python script utilizing Twillo API and Google Drive API. With these we used the gspread package made by Anton Burnashev to read the spreadsheet data to later be sent out as alerts to Maxwell's phone! Very CRUD solution for now but would upload the package to DigitalOcean or AWS. 
 
 # SETUP
 
-Make an account on twillo.com for;
+Make an account on  to get;
     account_sid:
     auth_token:
     Phone number:
- 
- We will use these to integrate the twillo API
+We will use these to integrate the twillo API
  
 Next we want to be able to access our spreadsheet data and to do this we will need to create a service account and OAuth2 credentials from the Google API console. 
 
@@ -36,11 +37,13 @@ Now that you have the JSON file you need to actually complete one more step so t
 2. Open your spreadsheet and click share, and copy the client_email in with edit perms. 
  
  
-INSTALL THESE PACKAGES (I used Git Bash to do so) 
+# INSTALL THESE PACKAGES (I used Git Bash) 
 
+~~~git
   $pip install gspread
   $pip install oauth2client
-  
+  $pip install twillo
+~~~
 We implement these packges with the following code in the spreadsheet_to_SMS.py:
 
 ~~~python
