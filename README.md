@@ -44,13 +44,11 @@ Now that you have the JSON file you need to actually complete one more step so t
   $pip install oauth2client
   $pip install twillo
 ~~~
-We implement these packges with the following code in the spreadsheet_to_SMS.py:
-
+We implement these with the following code in the spreadsheet_to_SMS.py:
 ~~~python
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 ~~~
-
 This segment is for the twillo implementation: 
 ~~~python
 from twilio.rest import TwilioRestClient
@@ -71,6 +69,6 @@ list_of_hashes = sheet.get_all_records()
 print(list_of_hashes)
 ~~~
 
-# HAVE FUN! 
+# HAVE FUN WITH IT! 
 
-Feel free to use this code if you ever need to take data out of a google spreadsheet and to send certain cells out as a SMS message! 
+Feel free to use this code if you ever need to take data out of a google spreadsheet and to send certain cells out as a SMS message! Send me the creative stuff you make, I'd love to take a look at it :) 
