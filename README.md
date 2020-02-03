@@ -1,8 +1,18 @@
 # ConnectIT
-Ingram MircoCase Competition
+Ingram Mirco Case Competition
+
+# Problem Statement
+
+Maxwell, head of Building Operations at 55 Standish Court, Mississauga, Ontario, is experiencing some problems with getting insight into the building systems. Everything is reactive. Some of the issues that have occurred include the HVAC system breaking down twice in November and the elevator failing at least once per week over four weeks. Occupancy comfort is also an issue – sometimes, it’s too hot, and other times, it’s just so cold that the occupants need a sweater! There have also been several cases of water leakage that caused severe damages. Your goal is to help Maxwell gain real operational insight with an early warning system. Help him become the proactive Building Operations Manager he wants to be. What would you recommend to Maxwell?
 
 
-SETUP:
+# Solution
+
+We decided to create a two part solution. The first being a concept idea using a sensor relay to make issues with the building interconnected through different sensors; air pressure, temperature, humidity, etc. We will then connect these sensors to a router to collect data from around the building. We will have this data accesible to Maxwell with a dashboard and implement a machine learning backend to figure out why the problems occured by taking into account the frequency, intensity, and location of the data. 
+
+The second part is our more tangible end user experience. For this we created a simple python script utilizing Twillo API and Google Drive API. With these we implement the gspread package made by Anton Burnashev to read the spreadsheet data. 
+
+# SETUP
 
 Make an account on twillo.com for;
     account_sid:
@@ -33,8 +43,9 @@ INSTALL THESE PACKAGES (I used Git Bash to do so)
   
 We implement these packges with the following code in the spreadsheet_to_SMS.py
 
-~~~json
-import gspread
+===============================================================================
+
+'''import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 #Importing Twillo information
@@ -54,4 +65,4 @@ sheet = client.open("ENTER YOUR SPREADSHEET NAME HERE").sheet1
 #Extract and print all of the values
 list_of_hashes = sheet.get_all_records()
 print(list_of_hashes)
-~~~
+'''
