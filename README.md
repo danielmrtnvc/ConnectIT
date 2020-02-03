@@ -41,29 +41,33 @@ INSTALL THESE PACKAGES (I used Git Bash to do so)
   $pip install gspread
   $pip install oauth2client
   
-We implement these packges with the following code in the spreadsheet_to_SMS.py
-
-===============================================================================
+We implement these packges with the following code in the spreadsheet_to_SMS.py:
 
 ~~~python
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+~~~
 
-#Importing Twillo information
+This segment is for the twillo implementation: 
+~~~python
 from twilio.rest import TwilioRestClient
 account_sid = "ENTER YOUR account_sid HERE"
 auth_token = "ENTER YOUR auth_token HERE"
 clienttwillo = TwilioRestClient(account_sid, auth_token)
-
-#Use creds in "client_secret.json" to create a client to interact with the Google Drive API
+~~~
+This segment is for giving the service account credentials and to locate the scope:
+~~~python
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
-
-#Find a workbook by name and open the first sheet
+~~~
+This segment is to open the specific spreadsheet in your drive and to extract the data to a list:
+~~~python
 sheet = client.open("ENTER YOUR SPREADSHEET NAME HERE").sheet1
-
-#Extract and print all of the values
 list_of_hashes = sheet.get_all_records()
 print(list_of_hashes)
 ~~~
+
+# HAVE FUN! 
+
+Feel free to use this code if you ever need to take data out of a google spreadsheet and to send certain cells out as a SMS message! 
