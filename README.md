@@ -71,4 +71,4 @@ print(list_of_hashes)
 
 # HAVE FUN WITH IT! 
 
-Feel free to use this code if you ever need to take data out of a google spreadsheet and to send certain cells out as a SMS message! Send me the creative stuff you make, I'd love to take a look at it :) 
+Feel free to use this code if you ever need to take data out of a google spreadsheet and to send certain cells out as a SMS message! Send me the creative stuff you make, I'd love to take a look at it :) Check out https://gspread.readthedocs.io/en/latest/ to see what you can do with gspread! 
