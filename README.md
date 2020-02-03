@@ -12,7 +12,7 @@ Very vague problem, I know :|
 
 So we decided to create a two part solution. The first being a concept idea using a sensor relay to make issues with the building interconnected through different measurements; air pressure, temperature, humidity, etc. We will then connect these sensors to a router to collect data from around the building. We will have this data accessible to Maxwell with a dashboard and implement a machine learning backend to figure out why the problems occurred by taking into account the frequency, intensity, and location of the data. 
 
-The second part is our more tangible end user experience. For this we created a simple python script utilizing Twillo API and Google Drive API. With these we used the gspread package made by Anton Burnashev to read the spreadsheet data to later be sent out as alerts to Maxwell's phone! Very CRUD solution for now but would upload the package to DigitalOcean or AWS. 
+The second part is our more tangible end user experience. For this we created a simple python script utilizing Twillo API and Google Drive API. With these we used the gspread package made by Anton Burnashev to read the spreadsheet data to later be sent out as alerts to Maxwell's phone! This solution allows for CRUD processes. The package could be uploaded to DigitalOcean or AWS. 
 
 # SETUP
 
