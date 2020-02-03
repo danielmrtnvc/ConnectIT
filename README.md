@@ -16,7 +16,7 @@ The second part is our more tangible end user experience. For this we created a 
 
 # SETUP
 
-Make an account on  to get;
+Make an account on twillo.com to get;
     account_sid:
     auth_token:
     Phone number:
